@@ -42,11 +42,19 @@ void loop() {
 
 void print_roll_pitch_yaw() {
     Serial.print("Yaw, Pitch, Roll: ");
-    Serial.print(mpu.getYaw(), 2);
+    Serial.print(mpu.getYaw(), 2);    //小数点以下2桁の意味で引数2を送信
     Serial.print(", ");
     Serial.print(mpu.getPitch(), 2);
     Serial.print(", ");
-    Serial.println(mpu.getRoll(), 2);
+    Serial.print(mpu.getRoll(), 2);
+
+    Serial.print("\tAccel x,y,Z: ");
+    Serial.print(mpu.getAccBiasX(), 2);    //小数点以下2桁の意味で引数2を送信
+    Serial.print(", ");
+    Serial.print(mpu.getAccBiasY(), 2);
+    Serial.print(", ");
+    Serial.println(mpu.getAccBiasZ(), 2);
+    
 }
 
 void print_calibration() {
